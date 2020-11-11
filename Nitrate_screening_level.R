@@ -17,7 +17,7 @@ I<-0.01057 #infiltration, meters/year
 K<-6812 #hydraulic conductivity, meters/year
 i<-0.0023 #average hydraulic gradient
 L<-100 #length of source parallel to groundwater flow (site specific) 
-d<-Eqn4(L,da,I,K,i)
+d<-ifelse(Eqn4(L,da,I,K,i)>da,da,Eqn4(L,da,I,K,i))
 DAF<-DAFEqn(K,i,d,I,L)
 MCL<-10 #nitrate, mg/L
 Kd<-0
@@ -44,7 +44,7 @@ I<-0.01057 #infiltration, meters/year, SIMPLOT
 K<-6812 #hydraulic conductivity, meters/year, SIMPLOT
 i<-0.0018 #average hydraulic gradient, WSC SITE SPECIFIC
 L<-866 #length of source parallel to groundwater flow, WSC SITE SPECIIFC
-d<-Eqn4(L,da,I,K,i)
+d<-ifelse(Eqn4(L,da,I,K,i)>da,da,Eqn4(L,da,I,K,i))
 DAF<-DAFEqn(K,i,d,I,L)
 MCL<-10 #nitrate, mg/L
 Kd<-0 #assumed

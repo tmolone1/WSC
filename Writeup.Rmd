@@ -12,7 +12,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-This attachment details calculations of migration to groundwater screening levels for nitrate and ammonia at the Western Sugar Cooperative (WSC) Facility in Torrington, Wyoming.  Wyoming Department of Environmental Quality (WDEQ) Voluntary Remediation Program (VRP) Fact Sheet #12 indicates that if a pre-calculated migration to groundwater value is not provided in the VRP Cleanup Level Look-up Table (WDEQ 2018a), one must be calculated.  Migration to groundwater standards for soil for nitrate as N, nitrite as N, and ammonia nitrogen are not included in VRP Fact Sheet #12.  As described herein, site-specific migration to groundwater screening levels for soil were developed based upon the equations presented in the WDEQ VRP Technical Support Memorandum: Development of Migration to Groundwater Cleanup Levels (WDEQ, 2018b) and the EPA Soil Screening Guidance, Technical Background Document (USEPA, 1996).
+This attachment describes calculation of migration to groundwater (MTGW) screening levels for nitrate and ammonia at the Western Sugar Cooperative (WSC) Facility in Torrington, Wyoming.  Wyoming Department of Environmental Quality (WDEQ) Voluntary Remediation Program (VRP) Fact Sheet #12 indicates that if a pre-calculated migration to groundwater value is not provided in the VRP Cleanup Level Look-up Table (WDEQ 2018a), one must be calculated.  MTGW standards for soil for nitrate as N, nitrite as N, and ammonia nitrogen are not included in VRP Fact Sheet #12.  As described herein, site-specific MTGW screening levels for soil were developed based upon the equations presented in the WDEQ VRP Technical Support Memorandum: Development of Migration to Groundwater Cleanup Levels (WDEQ, 2018b) and the EPA Soil Screening Guidance, Technical Background Document (USEPA, 1996).
 
 The WSC Torrington Facility is located adjacent to another agricultural facility operated by J.R. Simplot (Tetra Tech 2018).  Tetra Tech (2018) reviewed subregional hydrogeology and provided estimates of several relevant hydrogeologic parameters, including infiltration (recharge) rate, hydraulic conductivity, aquifer thickness and aquifer mixing depth.  Tetra Tech (2018) went on to calculate a dilution-attenuation factor (DAF) using USEPA (1996) Equation 11, which is reprinted below:
 
@@ -22,16 +22,16 @@ where
 * $DAF$ = dilution attenuation factor, unitless 
 * $K$ = hydraulic conductivity ($m/yr$) 
 * $i$ = hydraulic gradient ($m/m$) 
-* $d$ = aquifer mixing depth ($m$)  
+* $d$ = aquifer mixing depth ($m$) 
 * $I$ = infiltration (recharge) rate ($m/yr$) 
 * $L$ = Length of source parallel to flow ($m$) 
 
-The DAF is applied in the calculation of migration to groundwater screening levels through the following equations:
+The DAF is applied in the calculation of MTGW screening levels through the following equations:
 
 $$C_t = C_w + \left\{ \left( K_d \right)  +  \frac{ \theta_w + \theta_aH' }{\rho_b} \right\}$$
 which is Equation B from WDEQ (2018b) and Equation 10 in UESPA (1996), where:
 
-* $C_t$ = the migration to groundwater soil concentration (mg/kg), 
+* $C_t$ = the MTGW soil concentration (mg/kg), 
 * $C_w$ = the non-zero MCL, DWEL or ADWEL (mg/L) (assuming a dilution attenuation factor of 1), 
 * $K_d$ = the soil-water partitioning coefficient (L/kg), 
 * $\theta_w$ = the water-filled soil porosity (Lwater/Lsoil), 
@@ -45,14 +45,14 @@ defined as the ratio of soil leachate concentration to receptor point concentrat
 
 $$C_w = MCL \cdot DAF$$
 
-Substituing the above equation into equation B, the equation for the migration to groundwater screening level in soil is:
+Substituing the above equation into equation B, the equation for the MTGW screening level in soil is:
 $$C_t = \left( MCL \cdot DAF \right) + \left\{ \left( K_d \right)  +  \frac{ \theta_w + \theta_aH' }{\rho_b} \right\}$$
 
 
 
 ## Migration to Groundwater Calculations for the WSC Torrington Site
 
-The regional hydrogeologic parameters estimated by Tetra Tech (2018), and site specifc values for hydraulic gradient and length of source (Trihydro 2018), were used to calculate a site-specific DAF.  This DAF was used with the default parameters for Equation B in WDEQ (2018b) to calculate site-specific migration to groundwater screening levels for nitrate as N and ammonia as N for the WSC Torrington Facility.
+The regional hydrogeologic parameters estimated by Tetra Tech (2018), and site specifc values for hydraulic gradient and length of source, were used to calculate a site-specific DAF.  This DAF was used with the default parameters for Equation B in WDEQ (2018b) to calculate site-specific MTGW screening levels for nitrate as N and ammonia as N for the WSC Torrington Facility.
 
 ### Mixing Zone Depth
 
@@ -74,10 +74,10 @@ Using this equation and the following input parameters:
 * $d_a$ = 42.7 meters, which is the value used by Tetra Tech (2018) for the adjacent Simplot facility, 
 * I = 0.01057  meters/year, which is the value used by Tetra Tech (2018) for the adjacent Simplot facility, 
 * K = 6812 meters/year, which is the value used by Tetra Tech (2018) for the adjacent Simplot facility, 
-* i = 0.0018 meters per meters, which is a site-specific value based fluid level gauging data the WSC Torrington facility (Trihydro, 2018) 
-* L = 866 meters, which is based on the geometry of the WSC Torrington facility and observed nitrate and ammonia concentrations (Trihydro, 2018)  
+* i = 0.0018 meters per meter, which is a site-specific value based fluid level gauging data the WSC Torrington facility. 
+* L = 866 meters, which is based on the geometry of the ponds at the  WSC Torrington facility.   
 
-d, the mixing zone depth, is equal to 92.4 meters.
+d, the mixing zone depth, is equal to 92.4 meters, based on the equation.  However, USEPA (1996b) notes that the aquifer thickness serves as a limit for mixing zone depth, so in the event that $d > d_a$, as here, the value of $d_a$ should be used as the mixing zone depth.
 
 ### Dilution-Attenuation Factor
 
@@ -96,21 +96,21 @@ where
  
 Using this equation and the following input parameters:  
 
-* d = 92.4 meters, which is the mixing zone depth calculated above,  
-* I = 0.01057  meters/year, which is the value used by Tetra Tech (2018) for the adjacent Simplot facility,  
-* K = 6812 meters/year, which is the value used by Tetra Tech (2018) for the adjacent Simplot facility,  
-* i = 0.0018 meters per meters, which is a site-specific value based fluid level gauging data the WSC Torrington facility (Trihydro, 2018)  
+* d = 42.7 meters, which is the aquifer thickness, because the estimated mixing zone depth is greater than the aquifer thickness, 
+* I = 0.01057  meters/year, which is the value used by Tetra Tech (2018) for the adjacent Simplot facility, 
+* K = 6812 meters/year, which is the value used by Tetra Tech (2018) for the adjacent Simplot facility, 
+* i = 0.0018 meters per meters, which is a site-specific value based fluid level gauging data the WSC Torrington facility (Trihydro, 2018) 
 * L = 866 meters, which is based on the geometry of the WSC Torrington facility and observed nitrate and ammonia concentrations (Trihydro, 2018)  
  
-The DAF is equal to 125.  This is less than the DAF calculated for the nearby Simplot facility (159) by Tetra Tech (2018).  Using this DAF leads to comparaitively lower (i.e., more conservative) migration to groundwater screening levels, relative to the Simplot facility, if all other inputs were equal.
+The DAF is equal to 58.2.  This is less than the DAF calculated for the nearby Simplot facility (159) by Tetra Tech (2018).  Using this DAF leads to comparaitively lower (i.e., more conservative) MTGW screening levels, relative to the Simplot facility, if all other inputs were equal.
 
 ### Nitrate Screening Level
 
-the equation for the migration to groundwater screening level in soil is:
+The equation for the MTGW screening level in soil is:
 $$C_t = \left( MCL \cdot DAF \right) + \left\{ \left( K_d \right)  +  \frac{ \theta_w + \theta_aH' }{\rho_b} \right\}$$
 where,
 
-* $C_t$ = the migration to groundwater soil concentration (mg/kg), 
+* $C_t$ = the MTGW soil concentration (mg/kg), 
 * $MCL$ = the non-zero MCL, DWEL or ADWEL (mg/L), 
 * $DAF$ = dilution attenuation factor, unitless 
 * $K_d$ = the soil-water partitioning coefficient (L/kg), 
@@ -128,16 +128,16 @@ Using this equation and the following input parameters:
 * $H'$ = 0, which is the default value for inorganic contaminants 
 * $\rho_b$ = 1.5 which is the WDEQ Fact Sheet #25 default value  
 
-$C_t$ is equal to 249.5 mg/kg.
+$C_t$ is equal to 116.4 mg/kg.
 
 ### Ammonia Screening Level
 
-the equation for the migration to groundwater screening level in soil is:
+The equation for the MTGW screening level in soil is:
 $$C_t = \left( MCL \cdot DAF \right) + \left\{ \left( K_d \right)  +  \frac{ \theta_w + \theta_aH' }{\rho_b} \right\}$$
 
 where,  
 
-* $C_t$ = the migration to groundwater soil concentration (mg/kg), 
+* $C_t$ = the MTGW soil concentration (mg/kg), 
 * $MCL$ = the non-zero MCL, DWEL or ADWEL (mg/L), 
 * $DAF$ = dilution attenuation factor, unitless 
 * $K_d$ = the soil-water partitioning coefficient (L/kg), 
@@ -149,13 +149,13 @@ where,
 Using this equation and the following input parameters: 
 
 * $MCL$ = 0.5 (mg/L), for ammonia as N 
-* $K_d$ = 0.82 L/kg, which is the value from Trihydro (1995?) 
+* $K_d$ = 0.82 L/kg, which is the value from Trihydro (1995)
 * $\theta_w$ = 0.3 which is the WDEQ Fact Sheet #25 default value 
 * $\theta_a$ = 0.13 which is the WDEQ Fact Sheet #25 default value 
 * $H'$ = 0, which is the default value for inorganic contaminants 
 * $\rho_b$ = 1.5 which is the WDEQ Fact Sheet #25 default value  
 
-$C_t$ is equal to 63.6 mg/kg.
+$C_t$ is equal to 29.7 mg/kg.
 
  
 
@@ -164,11 +164,16 @@ $C_t$ is equal to 63.6 mg/kg.
 Tetra Tech.  2018.  Initial VRP Site Characterization Report, Wyoming Department of Environmental Quality 
 VRP Site #58.190, Simplot Grower Solutions Site, South Torrington, Wyoming.  April.
 
-United States Environmental Protection Agency (USEPA).  1996.  Soil Screening Guidance:  User’s Guide and Technical Background Document.  EPA/9355.4-23. https://www.epa.gov/superfund/superfund-soil-screening-guidance.
+Trihydro.  1995.  Reference Needed.
+
+United States Environmental Protection Agency (USEPA).  1996.  Soil Screening Guidance:  User’s Guide.  EPA/540/R-96/018. https://www.epa.gov/superfund/superfund-soil-screening-guidance.
+
+USEPA.  1996b.  Soil Screening Guidance:  Technical Background Document. https://www.epa.gov/superfund/superfund-soil-screening-guidance.
 
 Wyoming Department of Environmental Quality (WDEQ).  2018a.  Fact Sheet #12D Soil and Groundwater Cleanup Level Tables.  Revised 11/1/2018.  Available at:  
 http://deq.wyoming.gov/media/attachments/Solid%20%26%20Hazardous%20Waste/Voluntary%20Remediation%20Program/Fact%20Sheets/October2018_VRP_Factsheet12D%20Soil%20And%20Groundwater%20Cleanup%20Level%20Tables%20BL%20(1).xlsx.
 
 WDEQ.  2018b.  Fact Sheet #12 Technical Memorandum:  Migration to Groundwater.  Revised 11/19/2018.  Available at:  http://deq.wyoming.gov/media/attachments/Solid%20%26%20Hazardous%20Waste/Voluntary%20Remediation%20Program/Fact%20Sheets/FS12_TechMemo_MTGW_11.19.2018.pdf.
+
 
 
