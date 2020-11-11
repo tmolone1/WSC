@@ -1,0 +1,174 @@
+---
+title: "Attachment A, Migration to Groundwater Screening Level Calculations"
+author: "Western Sugar Cooperative, Torrington, Wyoming"
+date: "`r format(Sys.Date(), '%m/%d/%Y')`"
+output:
+  word_document: default
+  html_document: default
+  pdf_document: default
+---
+ 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This attachment details calculations of migration to groundwater screening levels for nitrate and ammonia at the Western Sugar Cooperative (WSC) Facility in Torrington, Wyoming.  Wyoming Department of Environmental Quality (WDEQ) Voluntary Remediation Program (VRP) Fact Sheet #12 indicates that if a pre-calculated migration to groundwater value is not provided in the VRP Cleanup Level Look-up Table (WDEQ 2018a), one must be calculated.  Migration to groundwater standards for soil for nitrate as N, nitrite as N, and ammonia nitrogen are not included in VRP Fact Sheet #12.  As described herein, site-specific migration to groundwater screening levels for soil were developed based upon the equations presented in the WDEQ VRP Technical Support Memorandum: Development of Migration to Groundwater Cleanup Levels (WDEQ, 2018b) and the EPA Soil Screening Guidance, Technical Background Document (USEPA, 1996).
+
+The WSC Torrington Facility is located adjacent to another agricultural facility operated by J.R. Simplot (Tetra Tech 2018).  Tetra Tech (2018) reviewed subregional hydrogeology and provided estimates of several relevant hydrogeologic parameters, including infiltration (recharge) rate, hydraulic conductivity, aquifer thickness and aquifer mixing depth.  Tetra Tech (2018) went on to calculate a dilution-attenuation factor (DAF) using USEPA (1996) Equation 11, which is reprinted below:
+
+$$DAF = 1 + \left( \frac{ Kid }{IL} \right)$$
+where 
+
+* $DAF$ = dilution attenuation factor, unitless 
+* $K$ = hydraulic conductivity ($m/yr$) 
+* $i$ = hydraulic gradient ($m/m$) 
+* $d$ = aquifer mixing depth ($m$)  
+* $I$ = infiltration (recharge) rate ($m/yr$) 
+* $L$ = Length of source parallel to flow ($m$) 
+
+The DAF is applied in the calculation of migration to groundwater screening levels through the following equations:
+
+$$C_t = C_w + \left\{ \left( K_d \right)  +  \frac{ \theta_w + \theta_aH' }{\rho_b} \right\}$$
+which is Equation B from WDEQ (2018b) and Equation 10 in UESPA (1996), where:
+
+* $C_t$ = the migration to groundwater soil concentration (mg/kg), 
+* $C_w$ = the non-zero MCL, DWEL or ADWEL (mg/L) (assuming a dilution attenuation factor of 1), 
+* $K_d$ = the soil-water partitioning coefficient (L/kg), 
+* $\theta_w$ = the water-filled soil porosity (Lwater/Lsoil), 
+* $\theta_a$ = the air-filled soil porosity (Lair/Lsoil), 
+* $H'$ = the Henry’s Law constant (dimensionless), and 
+* $\rho_b$ = the dry soil bulk density. 
+
+
+As discussed in USEPA (1996), the reduction in concentration due to attenuation between the source of contaminants in the soil and the point soil leachate reaches groundwater is expressed by a dilution attenuation factor (DAF),
+defined as the ratio of soil leachate concentration to receptor point concentration. 
+
+$$C_w = MCL \cdot DAF$$
+
+Substituing the above equation into equation B, the equation for the migration to groundwater screening level in soil is:
+$$C_t = \left( MCL \cdot DAF \right) + \left\{ \left( K_d \right)  +  \frac{ \theta_w + \theta_aH' }{\rho_b} \right\}$$
+
+
+
+## Migration to Groundwater Calculations for the WSC Torrington Site
+
+The regional hydrogeologic parameters estimated by Tetra Tech (2018), and site specifc values for hydraulic gradient and length of source (Trihydro 2018), were used to calculate a site-specific DAF.  This DAF was used with the default parameters for Equation B in WDEQ (2018b) to calculate site-specific migration to groundwater screening levels for nitrate as N and ammonia as N for the WSC Torrington Facility.
+
+### Mixing Zone Depth
+
+Mixing zone depth is calculated using the following equation (USEPA 1996b, Equation 45): 
+$$d = \left( 0.0112L^2\right)^{0.5} + d_a \{1-e^{-LI/Kid_a}\}$$
+
+where:  
+
+* d = the mixing zone depth (meters), 
+* L = the source length parallel to groundwater flow (meters), 
+* $d_a$ = the aquifer thickness (meters), 
+* I = the infiltration (recharge) rate (meters per year), 
+* K = the aquifer hydraulic conductivity (meters per year), and 
+* i = the hydraulic gradient (meters per meter).  
+
+
+Using this equation and the following input parameters:  
+
+* $d_a$ = 42.7 meters, which is the value used by Tetra Tech (2018) for the adjacent Simplot facility, 
+* I = 0.01057  meters/year, which is the value used by Tetra Tech (2018) for the adjacent Simplot facility, 
+* K = 6812 meters/year, which is the value used by Tetra Tech (2018) for the adjacent Simplot facility, 
+* i = 0.0018 meters per meters, which is a site-specific value based fluid level gauging data the WSC Torrington facility (Trihydro, 2018) 
+* L = 866 meters, which is based on the geometry of the WSC Torrington facility and observed nitrate and ammonia concentrations (Trihydro, 2018)  
+
+d, the mixing zone depth, is equal to 92.4 meters.
+
+### Dilution-Attenuation Factor
+
+The DAF equation is:
+
+$$DAF = 1 + \left( \frac{ Kid }{IL} \right)$$
+
+where  
+
+* $DAF$ = dilution attenuation factor, unitless 
+* $K$ = hydraulic conductivity ($m/yr$) 
+* $i$ = hydraulic gradient ($m/m$) 
+* $d$ = aquifer mixing depth ($m$) 
+* $I$ = infiltration (recharge) rate ($m/yr$) 
+* $L$ = Length of source parallel to flow ($m$)  
+ 
+Using this equation and the following input parameters:  
+
+* d = 92.4 meters, which is the mixing zone depth calculated above,  
+* I = 0.01057  meters/year, which is the value used by Tetra Tech (2018) for the adjacent Simplot facility,  
+* K = 6812 meters/year, which is the value used by Tetra Tech (2018) for the adjacent Simplot facility,  
+* i = 0.0018 meters per meters, which is a site-specific value based fluid level gauging data the WSC Torrington facility (Trihydro, 2018)  
+* L = 866 meters, which is based on the geometry of the WSC Torrington facility and observed nitrate and ammonia concentrations (Trihydro, 2018)  
+ 
+The DAF is equal to 125.  This is less than the DAF calculated for the nearby Simplot facility (159) by Tetra Tech (2018).  Using this DAF leads to comparaitively lower (i.e., more conservative) migration to groundwater screening levels, relative to the Simplot facility, if all other inputs were equal.
+
+### Nitrate Screening Level
+
+the equation for the migration to groundwater screening level in soil is:
+$$C_t = \left( MCL \cdot DAF \right) + \left\{ \left( K_d \right)  +  \frac{ \theta_w + \theta_aH' }{\rho_b} \right\}$$
+where,
+
+* $C_t$ = the migration to groundwater soil concentration (mg/kg), 
+* $MCL$ = the non-zero MCL, DWEL or ADWEL (mg/L), 
+* $DAF$ = dilution attenuation factor, unitless 
+* $K_d$ = the soil-water partitioning coefficient (L/kg), 
+* $\theta_w$ = the water-filled soil porosity (Lwater/Lsoil),  
+* $\theta_a$ = the air-filled soil porosity (Lair/Lsoil), 
+* $H'$ = the Henry’s Law constant (dimensionless), and 
+* $\rho_b$ = the dry soil bulk density.  
+
+Using this equation and the following input parameters: 
+
+* $MCL$ = 10 (mg/L), for nitrate as N 
+* $K_d$ = 0, which is a conservative assumption 
+* $\theta_w$ = 0.3 which is the WDEQ Fact Sheet #25 default value 
+* $\theta_a$ = 0.13 which is the WDEQ Fact Sheet #25 default value
+* $H'$ = 0, which is the default value for inorganic contaminants 
+* $\rho_b$ = 1.5 which is the WDEQ Fact Sheet #25 default value  
+
+$C_t$ is equal to 249.5 mg/kg.
+
+### Ammonia Screening Level
+
+the equation for the migration to groundwater screening level in soil is:
+$$C_t = \left( MCL \cdot DAF \right) + \left\{ \left( K_d \right)  +  \frac{ \theta_w + \theta_aH' }{\rho_b} \right\}$$
+
+where,  
+
+* $C_t$ = the migration to groundwater soil concentration (mg/kg), 
+* $MCL$ = the non-zero MCL, DWEL or ADWEL (mg/L), 
+* $DAF$ = dilution attenuation factor, unitless 
+* $K_d$ = the soil-water partitioning coefficient (L/kg), 
+* $\theta_w$ = the water-filled soil porosity (Lwater/Lsoil), 
+* $\theta_a$ = the air-filled soil porosity (Lair/Lsoil), 
+* $H'$ = the Henry’s Law constant (dimensionless), and
+* $\rho_b$ = the dry soil bulk density. 
+
+Using this equation and the following input parameters: 
+
+* $MCL$ = 0.5 (mg/L), for ammonia as N 
+* $K_d$ = 0.82 L/kg, which is the value from Trihydro (1995?) 
+* $\theta_w$ = 0.3 which is the WDEQ Fact Sheet #25 default value 
+* $\theta_a$ = 0.13 which is the WDEQ Fact Sheet #25 default value 
+* $H'$ = 0, which is the default value for inorganic contaminants 
+* $\rho_b$ = 1.5 which is the WDEQ Fact Sheet #25 default value  
+
+$C_t$ is equal to 63.6 mg/kg.
+
+ 
+
+## References
+
+Tetra Tech.  2018.  Initial VRP Site Characterization Report, Wyoming Department of Environmental Quality 
+VRP Site #58.190, Simplot Grower Solutions Site, South Torrington, Wyoming.  April.
+
+United States Environmental Protection Agency (USEPA).  1996.  Soil Screening Guidance:  User’s Guide and Technical Background Document.  EPA/9355.4-23. https://www.epa.gov/superfund/superfund-soil-screening-guidance.
+
+Wyoming Department of Environmental Quality (WDEQ).  2018a.  Fact Sheet #12D Soil and Groundwater Cleanup Level Tables.  Revised 11/1/2018.  Available at:  
+http://deq.wyoming.gov/media/attachments/Solid%20%26%20Hazardous%20Waste/Voluntary%20Remediation%20Program/Fact%20Sheets/October2018_VRP_Factsheet12D%20Soil%20And%20Groundwater%20Cleanup%20Level%20Tables%20BL%20(1).xlsx.
+
+WDEQ.  2018b.  Fact Sheet #12 Technical Memorandum:  Migration to Groundwater.  Revised 11/19/2018.  Available at:  http://deq.wyoming.gov/media/attachments/Solid%20%26%20Hazardous%20Waste/Voluntary%20Remediation%20Program/Fact%20Sheets/FS12_TechMemo_MTGW_11.19.2018.pdf.
+
+
