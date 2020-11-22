@@ -12,6 +12,13 @@ Eqn4<-function(L,da,I,K,i) {
   d = (0.0112*L^2)^0.5 + da*(1-exp(1)^((-L*I)/(K*i*da)))
   return(d)
 }
+Crecep<-function(Ct, DAF, Kd, thetaw, thetaa, Hprime, rhob) {
+  recep = Ct/(DAF*(Kd+(thetaw+thetaa*Hprime)/rhob))
+  return(recep)
+}
+
+
+
 da<-42.7 #depth of aquifer, meters
 I<-0.01057 #infiltration, meters/year
 K<-6812 #hydraulic conductivity, meters/year
@@ -55,6 +62,7 @@ rhob <- 1.5 #FACT SHEET 25 default
 Ct<-EqnB(MCL, DAF, Kd, thetaw, thetaa, Hprime, rhob)
 Ct
 
+
 MCL<-0.5 #ammonia, mg/L
 Kd<-0.82 #L/kg, Trihydro 1995?/2018 - WSC Specific
 thetaw<-0.3 #FACT SHEET 25 default
@@ -63,3 +71,20 @@ Hprime <- 0 #FACT SHEET 25 default
 rhob <- 1.5 #FACT SHEET 25 default
 Ct<-EqnB(MCL, DAF, Kd, thetaw, thetaa, Hprime, rhob)
 Ct
+
+da<-42.7 #depth of aquifer, meters, SIMPLOT
+I<-0.01057 #infiltration, meters/year, SIMPLOT
+K<-6812 #hydraulic conductivity, meters/year, SIMPLOT
+i<-0.0018 #average hydraulic gradient, WSC SITE SPECIFIC
+L<-281.4 #length of source parallel to groundwater flow, WSC SITE SPECIIFC
+d<-ifelse(Eqn4(L,da,I,K,i)>da,da,Eqn4(L,da,I,K,i))
+DAF<-DAFEqn(K,i,d,I,L)
+MCL<-9.9067 #nitrate, mg/L
+Kd<-0 #assumed
+thetaw<-0.3 #FACT SHEET 25 default
+thetaa <- 0.13 #FACT SHEET 25 default
+Hprime <- 0 #FACT SHEET 25 default
+rhob <- 1.5 #FACT SHEET 25 default
+Ct<-EqnB(MCL, DAF, Kd, thetaw, thetaa, Hprime, rhob)
+Ct
+Crecep(Ct, DAF, Kd, thetaw, thetaa, Hprime, rhob)
